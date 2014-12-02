@@ -1,4 +1,4 @@
-package util.protocol;
+package net.betabears.oberien.util.protocol;
 
 public enum ActionFailureCode {
 	UsernameTaken(0), UsernameInvalid(1),

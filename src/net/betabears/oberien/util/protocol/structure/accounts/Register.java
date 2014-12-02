@@ -1,8 +1,8 @@
-package util.protocol.structure.accounts;
+package net.betabears.oberien.util.protocol.structure.accounts;
 
-import util.protocol.PacketType;
-import util.protocol.Command;
-import util.protocol.Packet;
+import net.betabears.oberien.util.protocol.Command;
+import net.betabears.oberien.util.protocol.Packet;
+import net.betabears.oberien.util.protocol.PacketType;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

@@ -1,4 +1,4 @@
-package util.validate;
+package net.betabears.oberien.util.validate;
 
 public class Validator {
 	public static boolean validateUsername(String username) {

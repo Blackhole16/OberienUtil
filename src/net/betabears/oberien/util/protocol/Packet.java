@@ -1,4 +1,4 @@
-package util.protocol;
+package net.betabears.oberien.util.protocol;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

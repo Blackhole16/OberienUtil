@@ -1,4 +1,4 @@
-package util.hash;
+package net.betabears.oberien.util.hash;
 
 import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;

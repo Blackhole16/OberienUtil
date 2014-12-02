@@ -1,4 +1,4 @@
-package util.validate;
+package net.betabears.oberien.util.validate;
 
 public enum Permissions {
 	BroadcastToAll(1), Kick(2);

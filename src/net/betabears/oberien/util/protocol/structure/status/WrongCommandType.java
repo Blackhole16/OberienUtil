@@ -1,8 +1,8 @@
-package util.protocol.structure.status;
+package net.betabears.oberien.util.protocol.structure.status;
 
-import util.protocol.PacketType;
-import util.protocol.Command;
-import util.protocol.Packet;
+import net.betabears.oberien.util.protocol.Command;
+import net.betabears.oberien.util.protocol.Packet;
+import net.betabears.oberien.util.protocol.PacketType;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

@@ -1,4 +1,4 @@
-package util.protocol;
+package net.betabears.oberien.util.protocol;
 
 public enum PacketType {
 	ActionFailed(0), ActionSucceed(1),

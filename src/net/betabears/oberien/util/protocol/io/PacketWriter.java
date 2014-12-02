@@ -1,12 +1,10 @@
-package util.protocol.io;
+package net.betabears.oberien.util.protocol.io;
 
-import logger.ErrorLogger;
-import util.protocol.Command;
-import util.protocol.Packet;
+import net.betabears.oberien.util.protocol.Command;
+import net.betabears.oberien.util.protocol.Packet;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.util.logging.Level;
 
 public class PacketWriter {
 	private DataOutputStream dataOutputStream;
@@ -23,11 +21,7 @@ public class PacketWriter {
 		packet.write(dataOutputStream);
 	}
 
-	public void close() {
-		try {
-			dataOutputStream.close();
-		} catch (IOException e) {
-			ErrorLogger.logger.log(Level.SEVERE, e.getMessage(), e);
-		}
+	public void close() throws IOException {
+		dataOutputStream.close();
 	}
 }

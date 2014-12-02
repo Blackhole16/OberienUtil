@@ -1,4 +1,4 @@
-package util.protocol;
+package net.betabears.oberien.util.protocol;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
