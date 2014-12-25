@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.UserRemoved)
+@Command(packetType = PacketType.UserRemoved)
 public class UserRemoved implements Packet {
 	protected String username;
 

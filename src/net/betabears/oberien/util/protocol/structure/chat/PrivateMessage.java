@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.PrivateMessage)
+@Command(packetType = PacketType.PrivateMessage)
 public class PrivateMessage implements Packet {
 	protected String sender;
 	protected String recipient;

@@ -8,31 +8,31 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(packetType = PacketType.Register)
-public class Register implements Packet {
-	protected String username;
-	protected String email;
-	protected String activationToken;
+@Command(packetType = PacketType.ValidateMailProofOfWorkAnswer)
+public class ValidateMailProofOfWorkAnswer implements Packet {
+	public byte[] proofOfWorkPrefix;
+	public String email;
 
-	public Register() {}
+	public ValidateMailProofOfWorkAnswer() {
+	}
 
-	public Register(String username, String email, String activationToken) {
-		this.username = username;
+	public ValidateMailProofOfWorkAnswer(byte[] proofOfWorkPrefix, String email) {
+		this.proofOfWorkPrefix = proofOfWorkPrefix;
 		this.email = email;
-		this.activationToken = activationToken;
 	}
 
 	@Override
 	public void read(DataInputStream dataInputStream) throws IOException {
-		username = dataInputStream.readUTF();
+		int length = dataInputStream.readInt();
+		proofOfWorkPrefix = new byte[length];
+		dataInputStream.read(proofOfWorkPrefix);
 		email = dataInputStream.readUTF();
-		activationToken = dataInputStream.readUTF();
 	}
 
 	@Override
 	public void write(DataOutputStream dataOutputStream) throws IOException {
-		dataOutputStream.writeUTF(username);
+		dataOutputStream.writeInt(proofOfWorkPrefix.length);
+		dataOutputStream.write(proofOfWorkPrefix);
 		dataOutputStream.writeUTF(email);
-		dataOutputStream.writeUTF(activationToken);
 	}
 }

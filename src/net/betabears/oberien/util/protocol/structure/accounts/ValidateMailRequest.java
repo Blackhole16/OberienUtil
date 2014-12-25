@@ -8,23 +8,24 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.ValidateMail)
-public class ValidateMail implements Packet {
-	protected String activationToken;
+@Command(packetType = PacketType.ValidateMailRequest)
+public class ValidateMailRequest implements Packet {
+	protected String mail;
 
-	public ValidateMail() {}
+	public ValidateMailRequest() {
+	}
 
-	public ValidateMail(String activationToken) {
-		this.activationToken = activationToken;
+	public ValidateMailRequest(String mail) {
+		this.mail = mail;
 	}
 
 	@Override
 	public void read(DataInputStream dataInputStream) throws IOException {
-		activationToken = dataInputStream.readUTF();
+		mail = dataInputStream.readUTF();
 	}
 
 	@Override
 	public void write(DataOutputStream dataOutputStream) throws IOException {
-		dataOutputStream.writeUTF(activationToken);
+		dataOutputStream.writeUTF(mail);
 	}
 }

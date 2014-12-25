@@ -8,27 +8,24 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.LoginSuccess)
-public class LoginSuccess implements Packet {
+@Command(packetType = PacketType.CertificateSigningSuccess)
+public class CertificateSigningSuccess implements Packet {
 	protected String username;
-	protected int permissions;
 
-	public LoginSuccess() {}
+	public CertificateSigningSuccess() {
+	}
 
-	public LoginSuccess(String username, int permissions) {
+	public CertificateSigningSuccess(String username) {
 		this.username = username;
-		this.permissions = permissions;
 	}
 
 	@Override
 	public void read(DataInputStream dataInputStream) throws IOException {
 		username = dataInputStream.readUTF();
-		permissions = dataInputStream.readInt();
 	}
 
 	@Override
 	public void write(DataOutputStream dataOutputStream) throws IOException {
 		dataOutputStream.writeUTF(username);
-		dataOutputStream.writeInt(permissions);
 	}
 }

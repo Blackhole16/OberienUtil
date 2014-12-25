@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.UserAdded)
+@Command(packetType = PacketType.UserAdded)
 public class UserAdded implements Packet {
 	protected String[] usernames;
 

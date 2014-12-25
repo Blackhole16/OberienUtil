@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.Kick)
+@Command(packetType = PacketType.Kick)
 public class Kick implements Packet {
 	protected String username;
 	protected String from;

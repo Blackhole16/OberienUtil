@@ -4,6 +4,6 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-public interface PacketHandler {
-	boolean handle(Object o) throws IOException, InvalidKeySpecException, NoSuchAlgorithmException;
+public interface PacketHandler<T> {
+	boolean handle(T t) throws IOException;
 }

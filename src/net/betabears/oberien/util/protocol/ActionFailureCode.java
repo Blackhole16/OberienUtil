@@ -1,15 +1,15 @@
 package net.betabears.oberien.util.protocol;
 
 public enum ActionFailureCode {
-	UsernameTaken(0), UsernameInvalid(1),
+	UsernameTaken(0), LoginNameTaken(7), UsernameInvalid(1),
 
 	MailNotValidated(2), MailInvalid(3),
 
 	NotLoggedIn(4),
 
-	ValidationTokenInvalid(5), ValidationTokenWrong(6),
+	ValidationTokenInvalid(5), ValidationTokenWrong(6), InvalidProofOfWork(8),
 
-	WrongCredentials(-1), NotEnoughPermissions(-2);
+	WrongCredentials(-1), NotEnoughPermissions(-2), InternalServerError(-3);
 
 	private final int ID;
 

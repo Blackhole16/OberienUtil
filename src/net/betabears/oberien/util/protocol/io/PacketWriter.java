@@ -17,7 +17,7 @@ public class PacketWriter {
 		if (!(packet instanceof Command)) {
 			throw new UnsupportedOperationException("Packet does not implement the Command-Annotation");
 		}
-		dataOutputStream.writeInt(((Command) packet).commandType().getID());
+		dataOutputStream.writeInt(((Command) packet).packetType().getID());
 		packet.write(dataOutputStream);
 	}
 

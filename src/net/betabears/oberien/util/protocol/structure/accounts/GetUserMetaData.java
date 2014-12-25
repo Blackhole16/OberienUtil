@@ -8,27 +8,28 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.Login)
-public class Login implements Packet {
+@Command(packetType = PacketType.GetUserMetaData)
+public class GetUserMetaData implements Packet {
 	protected String username;
-	protected String password;
+	protected int permissions;
 
-	public Login() {}
+	public GetUserMetaData() {
+	}
 
-	public Login(String username, String password) {
+	public GetUserMetaData(String username, int permissions) {
 		this.username = username;
-		this.password = password;
+		this.permissions = permissions;
 	}
 
 	@Override
 	public void read(DataInputStream dataInputStream) throws IOException {
 		username = dataInputStream.readUTF();
-		password = dataInputStream.readUTF();
+		permissions = dataInputStream.readInt();
 	}
 
 	@Override
 	public void write(DataOutputStream dataOutputStream) throws IOException {
 		dataOutputStream.writeUTF(username);
-		dataOutputStream.writeUTF(password);
+		dataOutputStream.writeInt(permissions);
 	}
 }

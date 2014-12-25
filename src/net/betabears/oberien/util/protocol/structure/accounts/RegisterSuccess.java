@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.RegisterSuccess)
+@Command(packetType = PacketType.RegisterSuccess)
 public class RegisterSuccess implements Packet {
 
 	public RegisterSuccess() {}

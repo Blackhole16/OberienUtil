@@ -31,17 +31,25 @@ public class PacketReader {
 		if (currentHandler == null || !(currentHandler instanceof Command)) {
 			throw new UnsupportedOperationException("Read Package does not have a valid Handler.");
 		}
-		return ((Command)currentHandler).commandType();
+		return ((Command)currentHandler).packetType();
 	}
 
-	public boolean handle() throws IOException, InvalidKeySpecException, NoSuchAlgorithmException {
+	@SuppressWarnings("unchecked")
+	public boolean handle() throws IOException {
+		Packet packet = (Packet) currentHandler;
+		packet.read(dataInputStream);
+		return currentHandler.handle(o);
+	}
+
+	@SuppressWarnings("unchecked")
+	public boolean handle(Object o) throws IOException {
 		Packet packet = (Packet) currentHandler;
 		packet.read(dataInputStream);
 		return currentHandler.handle(o);
 	}
 
 	public void addPacket(Class<? extends PacketHandler> clazz) {
-		packets.put(clazz.getAnnotation(Command.class).commandType().getID(), clazz);
+		packets.put(clazz.getAnnotation(Command.class).packetType().getID(), clazz);
 	}
 
 	private PacketHandler getPacket(int id) {

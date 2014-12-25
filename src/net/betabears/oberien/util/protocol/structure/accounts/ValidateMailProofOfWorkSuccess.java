@@ -8,10 +8,11 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.RegisterSuccess)
-public class ValidateMailSuccess implements Packet {
+@Command(packetType = PacketType.ValidateMailProofOfWorkSuccess)
+public class ValidateMailProofOfWorkSuccess implements Packet {
 
-	public ValidateMailSuccess() {}
+	public ValidateMailProofOfWorkSuccess() {
+	}
 
 	@Override
 	public void read(DataInputStream dataInputStream) throws IOException {

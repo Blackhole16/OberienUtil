@@ -9,7 +9,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.ActionFailed)
+@Command(packetType = PacketType.ActionFailed)
 public class ActionFailed implements Packet {
 	protected ActionFailureCode failureCode;
 

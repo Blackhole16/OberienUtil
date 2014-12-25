@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.BroadcastToAll)
+@Command(packetType = PacketType.BroadcastToAll)
 public class BroadcastToAll implements Packet {
 	protected String sender;
 	protected String message;

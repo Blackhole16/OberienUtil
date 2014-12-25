@@ -8,7 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-@Command(commandType = PacketType.WrongCommandType)
+@Command(packetType = PacketType.WrongCommandType)
 public class WrongCommandType implements Packet {
 
 	public WrongCommandType(){}
